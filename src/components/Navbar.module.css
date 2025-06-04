@@ -1,0 +1,39 @@
+.navContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background: #ecd909;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    
+}
+
+.imgContainer {
+    width: 100px;
+}
+
+.locationContainer {
+    display: flex;
+    margin-left: 1rem;
+}
+
+.inputContainer {
+    flex: 1;
+    margin : 0 2rem;
+}
+
+.linkRigth {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.875rem;
+}
+
+.linkContainer {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.875rem;
+}
