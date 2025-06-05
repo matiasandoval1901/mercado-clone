@@ -6,18 +6,16 @@ function Navbar () {
       
       <div className={styles.topRow}>
         <div className={styles.logoContainer}>
-          <img src="/public/logo-mercado-clone.png" alt="Mercado Libre" />
-          <p>Enviar a</p>
-          <p>📍 Tu Ubicación</p>
+          <img className={styles.img} src="/public/logo-mercado-clone.png" alt="Mercado Libre" />
+          <h1 className={styles.h1}>Enviar a</h1>
+          <button className={styles.button}>Tu ubicacion</button>
         </div>
         <div className={styles.searchContainer}>
           <input type="text" placeholder="Buscar productos, marcas y más..." />
           <button>Buscar</button>
         </div>
         <div className={styles.userSection}>
-          <p>Creá tu cuenta</p>
-          <p>Ingresa</p>
-          <p>Tus Compras</p>
+          <img className={styles.publicity} src='https://http2.mlstatic.com/D_NQ_779354-MLA82788204133_022025-OO.webp'/>
         </div>
       </div>
 
