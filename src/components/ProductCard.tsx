@@ -1,32 +1,31 @@
-//aqui el import de estilos
+import styles from './ProductCard.module.css';
+
+
 type ProductCardProps = {
   title: string;
-  price: number;
-  description: string;
-  image: string;
-  freeShipping?: boolean;
+  price: string;
+  methods: string;
+  src: string;
 }
 
 function ProductCard (props: ProductCardProps) {
   const {
     title,
     price,
-    description,
-    image,
-    freeShipping = false
+    methods,
+    src,
   } = props;
   return (
-    <div className="product-card">
-      <img src={image} alt={title} className="product-image" />
-      <div className="product-info">
-        <h3 className="product-title">{title}</h3>
-        <p className="product-price">${price}</p>
-        <p className='product-description'>{description} </p>
-        {freeShipping && (
-          <span className="free-shipping"> Envío gratis</span>
-        )}
+    <article className= {styles.container}>
+      <img className={styles.image} src={src}></img>
+      <div className={styles.content}>
+        <h2 className= {styles.title}>{title}</h2>
+        <p className={styles.price}>${price}</p>
+        <p className={styles.methods}>{methods} </p>
+        
+        <button className={styles.button}>Comprar</button>
       </div>
-    </div>
+    </article>
   );
 };
 
