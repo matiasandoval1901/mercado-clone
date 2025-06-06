@@ -1,72 +1,107 @@
 .navbar {
-    width: 100%;
-    background-color: #ffe600; 
-    padding: 2px 4px;
-    box-sizing: border-box;
+  width: 100%;
+  background-color: #ffe600; 
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
 
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100
-  }
+.img {
+  width: 140px;
+  height: 60px;
+  margin-top: 10px;
+}
   
-  .topRow {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+.h1 {
+  font-size: 12px;
+  color: #a79b9b;
+  font-weight: 100;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.button {
+  background-color: transparent;
+  font-size: 12px;
+  color: black;
+  width: 170px;
+  padding: 0;
+  padding-top: 2px;
+}
+.topRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+padding: 0;
+}
   
-  .logoContainer img {
-    width: 120px;
-  }
-  .logoContainer p  {
-      color: #000;
-  }
+.logoContainer {
+  width: 140px;
+  height: 80px;
+  margin-left: 80px;
+}
+
+.searchContainer {
+  flex: 1;
+  max-width: 600px;
+  padding: 0;
+  display: flex;
+}
   
-  .searchContainer {
-    flex: 1;
-    display: flex;
-    margin: 0 16px;
-    max-width: 600px;
-  }
+.searchContainer input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background-color: white;
+  padding: 10px;
+}
   
-  .searchContainer input {
-    flex: 1;
-    padding: 8px;
-    border: none;
-    border-radius: 4px 0 0 4px;
-    outline: none;
-    background-color: white;
-  }
+.searchContainer button {
+  padding: 8px 16px;
+  border: none;
+  background-color: white;
+  color: #333;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+
+.userSection h1 {
   
-  .searchContainer button {
-    padding: 8px 16px;
-    border: none;
-    background-color: white;
-    color: #333;
-    border-radius: 0 4px 4px 0;
-    cursor: pointer;
-  }
-  .userSection {
-    display: flex;
-    gap: 8px;
-    margin-right: 10px;
-  }
-  .userSection p {
-    color: #333;
-  }
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  margin-top: 130px;
+}
+
+.publicity {
+  margin-top: 60px;
+  width: 320px;
+  height: 40px;
+  margin-right: 30px;
+}
   
-  .bottomRow {
-    display: flex;
-    justify-content: center;
-    margin-top: 2px;
-    gap: 8px;
-  }
+.bottomRow {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+  gap: 15px;
+  height: 45px;
+}
   
-  .bottomRow a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    font-size: 14px;
-  }
-  
+.bottomRow a {
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  margin-top: 24px;
+}
+
+.loginsection {
+  color: black;
+  font-size: 14px;
+  margin-left: 10px;
+  gap: 15px;
+  margin-top:20px;
+}
