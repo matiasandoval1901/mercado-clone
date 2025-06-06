@@ -16,7 +16,13 @@ function Navbar () {
         </div>
         <div className={styles.userSection}>
           <img className={styles.publicity} src='https://http2.mlstatic.com/D_NQ_779354-MLA82788204133_022025-OO.webp'/>
+          <p>
+            <a className={styles.loginsection} href="#">Creá tu cuenta</a>
+            <a className={styles.loginsection} href="#">Ingresa</a>
+            <a className={styles.loginsection} href="#">Mi carrito</a>
+          </p>
         </div>
+      
       </div>
 
       <div className={styles.bottomRow}>
@@ -28,7 +34,6 @@ function Navbar () {
         <a href="#">Vender</a>
         <a href="#">Ayuda</a>
       </div>  
-      
     </nav>
   );
 }
