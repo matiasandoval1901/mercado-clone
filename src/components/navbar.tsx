@@ -1,6 +1,6 @@
 import styles from "./Navbar.module.css";
 import  React  from "react";
-
+//props recibidas del componente padre
 type NavbarProps = {
   allproducts: any[];
   setAllproducts: (arr: any[]) => void;
@@ -18,7 +18,7 @@ const Navbar: React.FC<NavbarProps> = ({
   countproduct,
   setCountproduct,
 }) => {
-  const [active, setActive] = React.useState(false);
+  const [active, setActive] = React.useState(false); //active permite que se muestre el resultado en el contador
 
   return (
     <nav className={styles.navbar}>
@@ -31,7 +31,7 @@ const Navbar: React.FC<NavbarProps> = ({
              <button className={styles.location}>
                <span className={styles.h1}>Enviar a</span>
                <br/>
-               <span className={styles.h3}>Tu ubicacion</span>
+               <span className={styles.h3}>Tu ubicacion</span> 
              </button>
           </div>
         </div>
@@ -44,7 +44,7 @@ const Navbar: React.FC<NavbarProps> = ({
           <p>
             <a className={styles.loginsection} href="#">Creá tu cuenta</a>
             <a className={styles.loginsection} href="#">Ingresa</a>
-           <button onClick={() => setActive(!active)}>
+           <button onClick={() => setActive(!active)}> 
              <span className={styles.countproduct} id="contador_productos">{countproduct}</span>
              <img  className={styles.cart} src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png"/>
             </button>

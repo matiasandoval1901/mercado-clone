@@ -25,6 +25,7 @@
   background-color: #ffe600;
   outline: none;
   margin-left: 40px;
+  
  
 
 }
@@ -32,8 +33,11 @@
 .imglocation {
   width: 22px;
   height: 23px;
-  position:fixed;
-  margin-left: 20px;
+  position: fixed;
+  top: 20;
+  left: 110px;
+  z-index: 9999; 
+  position: absolute;
 }
 
 .h1 {

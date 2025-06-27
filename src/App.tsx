@@ -82,7 +82,7 @@ const response: Response = {
       {
         id: 6,
         src: 'https://images.journeys.com/images/products/1_658939_ZM.JPG',
-        titulo: 'Mochila Adidas',
+        titulo: 'Mochila Adidas Negra',
         precio: '65.999',
         metodo: 'Cuota Simple en 6 cuotas de $12.546'
       },
@@ -265,7 +265,7 @@ const response: Response = {
 
 function App() {
 
-  const [allproducts, setAllproducts] = useState([]);
+  const [allproducts, setAllproducts] = useState<any[]>([]);
   const [total, setTotal] = useState(0);
   const [countproduct, setCountproduct]= useState(0);
 
