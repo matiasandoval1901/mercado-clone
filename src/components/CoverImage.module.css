@@ -3,8 +3,8 @@
     justify-content: center;
     left: 0;
     height: 600px;
-    width:100vw;
-    overflow: hidden;
+    width:100%;
+    overflow-x: hidden;
 }
 
 .container img {

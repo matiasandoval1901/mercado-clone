@@ -43,10 +43,34 @@
 }
 
 .button {
-    background-color: rgb(133, 134, 134);
+    background-color: rgb(70, 68, 68) ;
     color: rgb(255, 255, 255);
-    width: 80px;
+    width: 180px;
     height: 30px;
     font-size: 12px;
 
+}
+
+.button2 {
+    background-color: rgb(70, 68, 68) ;
+    color: rgb(241, 236, 236);
+    width: 85px;
+    height: 30px;
+    font-size: 15px;
+    
+    
+    
+}
+
+.prueba {
+    background-color: rgb(70, 68, 68);
+    color: rgb(241, 236, 236);
+    font-size: 12px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.prueba2 {
+    background-color: rgb(70, 68, 68);
+    border-radius: 6px;
 }
