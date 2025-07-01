@@ -269,6 +269,10 @@ function App() {
   const [total, setTotal] = useState(0);
   const [countproduct, setCountproduct]= useState(0);
 
+  const [busqueda, setBusqueda] = useState('');
+  const [categoriaSelecionada, setCategoriaSelecionada] = useState('');
+
+
   const categories = [
     {title: response.productrecommended.categorytitle,product: response.productrecommended.product},
     {title: response.mostsoldout.categorytitle,product: response.mostsoldout.product},
@@ -283,7 +287,12 @@ function App() {
        setAllproducts={setAllproducts}
        total={total} setTotal={setTotal}
        countproduct={countproduct} 
-       setCountproduct={setCountproduct}/>
+       setCountproduct={setCountproduct}
+       busqueda={busqueda}
+       setBusqueda={setBusqueda}
+       categoriaSelecionada={categoriaSelecionada}
+       setCategoriaSelecionada={setCategoriaSelecionada}
+       />
       <CoverImage/>
       {categories.map((category) => (
         <ProductCardContainer key= {category.title} title= {category.title}>

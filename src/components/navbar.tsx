@@ -8,6 +8,11 @@ type NavbarProps = {
   setTotal: (value: number) => void;
   countproduct: number;
   setCountproduct: (count: number) => void;
+  busqueda: string;
+  setBusqueda: (value: string) => void;
+  categoriaSeleccionada: string;
+  setCategoriaSeleccionada: (value: string) => void;
+
 };
 
 const Navbar: React.FC<NavbarProps> = ({
@@ -17,6 +22,10 @@ const Navbar: React.FC<NavbarProps> = ({
   setTotal,
   countproduct,
   setCountproduct,
+  busqueda,
+  setBusqueda,
+  categoriaSeleccionada,
+  setCategoriaSeleccionada,
 }) => {
   const [active, setActive] = React.useState(false); //active permite que se muestre el resultado en el contador
 
@@ -36,7 +45,11 @@ const Navbar: React.FC<NavbarProps> = ({
           </div>
         </div>
         <div className={styles.searchContainer}>
-          <input type="text" placeholder="Buscar productos, marcas y más..." />
+          <input type="text"
+          placeholder="Buscar productos, marcas y más..."
+          value={busqueda}
+          onChange={(e) => setBusqueda(e.target.value)}
+          />
           <button>Buscar</button>
         </div>
         <div className={styles.userSection}>
@@ -54,7 +67,16 @@ const Navbar: React.FC<NavbarProps> = ({
       </div>
 
       <div className={styles.bottomRow}>
-        <a href="#">Categorías</a>
+      <select 
+          value={categoriaSeleccionada}
+          onChange={(e) => setCategoriaSeleccionada(e.target.value)}
+          >
+            <option value="">Categorías</option>
+            <option value="PRODUCTOS RECOMENDADOS">Productos Recomendados</option>
+            <option value="LOS MAS VENDIDOS">Los Mas Vendidos</option>
+            <option value="OFERTAS 50% OFF">Ofertas 50% Off</option>
+            <option value="SEGUN TUS BUSQUEDAS">Según Tus Búsquedas</option>
+          </select>
         <a href="#">Ofertas</a>
         <a href="#">Cupones</a>
         <a href="#">Supermercado</a>
