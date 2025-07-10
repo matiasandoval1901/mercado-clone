@@ -270,8 +270,7 @@ function App() {
   const [countproduct, setCountproduct]= useState(0);
 
   const [busqueda, setBusqueda] = useState('');
-  const [categoriaSelecionada, setCategoriaSelecionada] = useState('');
-
+  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('');
 
   const categories = [
     {title: response.productrecommended.categorytitle,product: response.productrecommended.product},
@@ -279,6 +278,18 @@ function App() {
     {title: response.offers.categorytitle,product: response.offers.product},
     {title: response.searches.categorytitle,product: response.searches.product},
   ];//object destructuring
+  
+  const allProducts = categories.flatMap((cat) => 
+    cat.product.map((product) => ({
+      ...product,
+      category: cat.title
+    }))
+  );
+  const productosFiltrados = allProducts.filter((product) => {
+    const coincideBusqueda = product.titulo.toLowerCase().includes(busqueda.toLowerCase());
+    const coincideCategoria = categoriaSeleccionada === "" || product.category === categoriaSeleccionada;
+    return coincideBusqueda && coincideCategoria;
+  });
 
   return(
     <div>
@@ -290,13 +301,13 @@ function App() {
        setCountproduct={setCountproduct}
        busqueda={busqueda}
        setBusqueda={setBusqueda}
-       categoriaSelecionada={categoriaSelecionada}
-       setCategoriaSelecionada={setCategoriaSelecionada}
+       categoriaSeleccionada={categoriaSeleccionada}
+       setCategoriaSeleccionada={setCategoriaSeleccionada}
        />
       <CoverImage/>
       {categories.map((category) => (
-        <ProductCardContainer key= {category.title} title= {category.title}>
-          {category.product.map((product) => {
+        <ProductCardContainer key= {category.title} title= "Resultados">
+          {productosFiltrados.map((product) => {
             return (
               <ProductCard
 
