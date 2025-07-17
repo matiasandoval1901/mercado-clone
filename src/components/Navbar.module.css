@@ -7,34 +7,62 @@
   z-index: 1000;
 }
 
+
 .img {
   width: 140px;
   height: 60px;
   margin-top: 10px;
 }
+
+.form {
+  background-color: #ffe600;
+  width: 120px;
+  height: 40px;
+}
+.location {
+  width: 100px;
+  height: 35px;
+  background-color: #ffe600;
+  outline: none;
+  margin-left: 40px;
   
-.h1 {
-  font-size: 12px;
-  color: #a79b9b;
-  font-weight: 100;
-  margin-top: 0;
-  margin-bottom: 0;
+ 
+
 }
 
-.button {
-  background-color: transparent;
+.imglocation {
+  width: 22px;
+  height: 23px;
+  position: fixed;
+  top: 20;
+  left: 110px;
+  z-index: 9999; 
+  position: absolute;
+}
+
+.h1 {
   font-size: 12px;
+  color: #757272;
+  font-weight: 100;
+  margin-right: 30px;
+ 
+}
+
+.h3 {
+  background-color: transparent;
+  font-size: 14px;
   color: black;
   width: 170px;
-  padding: 0;
-  padding-top: 2px;
+  padding-bottom: 4px;
+
+  
 }
 .topRow {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 50px;
-padding: 0;
+  padding: 0;
 }
   
 .logoContainer {
@@ -68,12 +96,9 @@ padding: 0;
 }
 
 
-.userSection h1 {
-  
-  text-decoration: none;
-  color: #000;
-  font-size: 14px;
-  margin-top: 130px;
+.userSection p{
+  margin-top: 0px;
+  margin-bottom: 0;
 }
 
 .publicity {
@@ -81,19 +106,20 @@ padding: 0;
   width: 320px;
   height: 40px;
   margin-right: 30px;
+  margin-bottom: 5px;
 }
   
 .bottomRow {
   display: flex;
   justify-content: center;
-  margin-bottom: 0;
-  gap: 15px;
+  padding-bottom: 2px;
+  gap: 20px;
   height: 45px;
 }
   
 .bottomRow a {
   text-decoration: none;
-  color: #000;
+  color: black;
   font-size: 14px;
   margin-top: 24px;
 }
@@ -101,7 +127,30 @@ padding: 0;
 .loginsection {
   color: black;
   font-size: 14px;
-  margin-left: 10px;
-  gap: 15px;
-  margin-top:20px;
+  margin-left: 20px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  gap:20px;
+}
+
+.cart {
+  width: 22px ;
+  height: 22px ;
+  margin-left: 20px;
+  background-color: #ffe600 ;
+}
+
+.countproduct {
+  position: absolute;
+  background-color: black;
+  color: aliceblue;
+  width: 13px;
+  height: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-left: 42px;
+ 
+
 }
