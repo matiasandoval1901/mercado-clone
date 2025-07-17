@@ -305,35 +305,46 @@ function App() {
        setCategoriaSeleccionada={setCategoriaSeleccionada}
        />
       <CoverImage/>
-      {categories.map((category) => (
-        <ProductCardContainer key= {category.title} title= "Resultados">
-          {productosFiltrados.map((product) => {
-            return (
-              <ProductCard
-
-              key= {product.id}
-              title= {product.titulo}
-              price= {product.precio}
-              methods={product.metodo}
-              src={product.src} 
-              allproducts ={allproducts} 
-              setAllproducts={setAllproducts}
-              total={total} setTotal={setTotal}
-              countproduct={countproduct} 
-              setCountproduct={setCountproduct}
-              >
-
-              </ProductCard>
-            )
-          })}
+      {busqueda != "" || categoriaSeleccionada != "" ? (
+        <ProductCardContainer  title= "Resultados">
+          {productosFiltrados.map((product) => (
+            <ProductCard
+            key= {product.id}
+            title= {product.titulo}
+            price= {product.precio}
+            methods={product.metodo}
+            src={product.src} 
+            allproducts ={allproducts} 
+            setAllproducts={setAllproducts}
+            total={total} setTotal={setTotal}
+            countproduct={countproduct} 
+            setCountproduct={setCountproduct}
+          />
+          ))}
         </ProductCardContainer>
-
-      ))}
-        
-
+      ) : (
+        categories.map((category) => (
+          <ProductCardContainer key={category.title} title={category.title}>
+            {category.product.map((product) => (
+              <ProductCard
+              key={product.id}
+              title={product.titulo}
+              price={product.precio}
+              methods={product.metodo}
+              src={product.src}
+              allproducts={allproducts}
+              setAllproducts={setAllproducts}
+              total={total}
+              setTotal={setTotal}
+              countproduct={countproduct}
+              setCountproduct={setCountproduct}
+            />
+            ))}
+          </ProductCardContainer>
+        ))
+      )}
     </div>
-  )
-  
+  );  
 }
 
 export default App
