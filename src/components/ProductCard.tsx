@@ -10,7 +10,7 @@ type ProductCardProps = {
   src: string;
 }
 
-function ProductCard ( {title, price, methods, src}: ProductCardProps) {
+function ProductCard ( {id, title, price, methods, src}: ProductCardProps) {
 
   return (
     <article className= {styles.container}>
@@ -20,7 +20,7 @@ function ProductCard ( {title, price, methods, src}: ProductCardProps) {
         <p className={styles.price}>${price}</p>
         <p className={styles.methods}>{methods} </p>
        
-        <Link to={"/products/${id}"}>
+        <Link to={`/products/${id}`}>
           <button className={styles.button}>Ver Producto</button>
         </Link>
       </div>

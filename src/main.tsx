@@ -8,6 +8,7 @@ import NotFound from './Pages/NotFound';
 import Cart from './Pages/Cart';
 import Layout from './components/Layout'; 
 import DataProvider from './Context/dataContext';
+import Checkout from './Pages/Checkout'
 
 createRoot(document.getElementById('root')!).render(
   <DataProvider>
@@ -19,6 +20,7 @@ createRoot(document.getElementById('root')!).render(
            <Route path='/' element={<App />} />
            <Route path='/cart' element={<Cart />} />
            <Route path='/products/:id' element={<ProductDetail />} />
+           <Route path='/buy' element={<Checkout/>}/>
            <Route path='*' element={<NotFound />} />
          </Route>
        </Routes>

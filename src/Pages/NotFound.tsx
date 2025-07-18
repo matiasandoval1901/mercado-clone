@@ -1,10 +1,16 @@
-
+import { Link } from "react-router";
+import styles from "./NotFound.module.css";
+import miImagen from "../assets/ups.jpeg"
 
 function NotFound() {
   return (
+    <>
     <div>
-      <h1>404 Not found</h1>
+      <img src={miImagen}
+      className={styles.back} />
     </div>
+    <Link to="/">Volver a inicio</Link>
+    </>
   );
 };
 

@@ -36,6 +36,8 @@ const Cart = () => {
 
       <h2>Total: ${total.toLocaleString()}</h2>
     </div>
+    <Link to="/buy"> Comprar
+    </Link>
     <Link to= "/">
         Volver
     </Link>

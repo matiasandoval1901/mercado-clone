@@ -1,18 +1,45 @@
-import { Link } from "react-router-dom";
+// src/Pages/ProductDetail.tsx
+import { useParams, Link } from "react-router-dom";
+import { response } from "../data/data";
+import type { Product } from "../Types/typeProduct";
 
+function ProductDetail() {
+  //useparams devuelve un objeto con los parámetros de la URL. en este caso product/:id
+  const { id } = useParams<{ id: string }>();
 
-const ProductDetail = () => {
-    return (
-        <>
-        <Link to={"/"}>Volver</Link>
-        <Link to={"/cart"}>
-          <button>Añadir al carrito</button>
-        </Link>
-        </>
-    )
+  // Buscar el producto en los datos locales
+  const allProducts: Product[] = [
+    ...response.productrecommended.product,
+    ...response.mostsoldout.product,
+    ...response.offers.product,
+    ...response.searches.product,
+  ];
+
+  const product = allProducts.find((p) => p.id === Number(id));
+
+  if (!product) {
+    return <h2>Producto no encontrado</h2>;
+  }
+
+  //funcion para agregar los productos al carrito
+  const onAddProduct = () => {};
+  return (
+    <div style={{ padding: "2rem" }}>
+      <img src={product.src} alt={product.titulo} width="200" />
+      <h1>{product.titulo}</h1>
+      <h3>${product.precio}</h3>
+
+      {/* hay que agregar una funcion para agregarlo al carrito al presionar*/}
+      <Link to="/cart">
+        <button  onClick={onAddProduct}>Agregar al carrito</button>
+      </Link>
+    </div>
+  );
 };
-
 export default ProductDetail;
+
+
+
  //aca dejo el codigo de la funcionalidad del boton de agregar al carrito
 
 
