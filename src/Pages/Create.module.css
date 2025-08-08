@@ -1,0 +1,80 @@
+.containerform {
+  display:flex;
+ 
+  background-color: rgb(255, 255, 255);
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 40px;
+  height: 650px;
+  width: 950px;
+  border-radius: 10px;
+  margin-left: 200px;
+  
+  
+}
+
+.eltitulo {
+    font-size: 22px;
+    position: inherit;
+    font-weight: normal;
+    margin-left:220px;
+    margin-top: 40px; 
+    padding: 0; 
+    text-align: left; 
+}
+
+.titulos {
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 4px;
+    margin-left: 30px;
+    margin-top: 15px; 
+    padding: 0; 
+    text-align: left; 
+   
+ 
+}
+
+.inicio {
+    background-color: transparent;
+    border: 1px solid;
+    border-color: rgb(164, 178, 255);
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    margin-top: 597px;
+    color: rgb(88, 137, 230);;
+
+}
+
+.file {
+    margin-top: 10px;
+    margin-left: 50px;
+}
+.texto {
+  width: 100%;
+  max-width: 300px;
+  height: 40px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-left: 30px;
+}
+.formGroup {
+  display: flex;
+  flex-direction: column; /* hace que el label esté encima del input */
+  margin-bottom: 20px;
+}
+
+.submit {
+    background-color:rgb(88, 137, 230);
+    height: 50px;
+    width: 300px;
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    position: inherit;
+    margin-top: 10px;
+    margin-left: 150px;
+}

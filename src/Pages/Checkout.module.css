@@ -1,0 +1,88 @@
+.inicio {
+    background-color: transparent;
+    border: 1px solid;
+    border-color: rgb(164, 178, 255);
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    margin-top: 20px;
+    color: rgb(88, 137, 230);;
+
+}
+
+.buy {
+       background-color:rgb(88, 137, 230);
+    height: 50px;
+    width: 300px;
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    position: inherit;
+    margin-top: 50px;
+}
+
+.containerform {
+
+  background-color: rgb(255, 255, 255);
+  margin-left: 400px;
+  margin-top: 40px;
+  height: 550px;
+  width: 450px;
+  border-radius: 10px;
+ 
+  
+}
+
+.title {
+  font-size: 16px;
+  text-align: left;
+  margin-left: 20px;
+  font-weight: normal;
+  padding-top: 20px;
+  
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 10px 0;
+}
+
+
+.formGroup {
+  margin: 10px 0;
+  text-align: left;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: normal;
+  display: block;
+  color: #333;
+  text-align: left;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+
+.label1 {
+  font-size: 18px;
+  font-weight:bold;
+  display: block;
+  color: #050505;
+  text-align: left;
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.totalLabel {
+  font-size: 14px;
+  text-align: left;
+  color: #000;
+  margin-top: 10px;
+  padding:0;
+  margin-left: 20px;
+  
+}
+

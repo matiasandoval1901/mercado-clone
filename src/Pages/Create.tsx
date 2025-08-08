@@ -3,6 +3,7 @@ import { productService } from "../data/service";
 import { useState } from "react";
 import { Link } from "react-router";
 import { useNavigate } from 'react-router-dom';
+import styles from "./Create.module.css"
 
 
 
@@ -58,69 +59,91 @@ export default function CreateForm () {
     };
 
     return (
-    <div>
-        <label htmlFor="image">Imagen (URL)</label>
-        <input
-          id="image"
-          type="file"
-          accept="image/*"
-          onChange={(e) => handleImageUpload(e)}
-        />
-      <h2>¡Hola! ¿Qué quieres vender?</h2>
+        <>
+      <h2 className={styles.eltitulo}>Hola, ¿Qué quieres vender?</h2>
+    <article className={styles.containerform}>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="titulo">Título:</label>
-        <input
-          id="titulo"
-          type="text"
-          value={title}
-          onChange={(e) => SetTitle(e.target.value)}
-          required
-        />
+         <div className={styles.formGroup}>
+             <label className={styles.titulos} >Título:</label>
+             <input className={styles.texto}
+                 id="titulo"
+                 type="text"
+                 value={title}
+                 onChange={(e) => SetTitle(e.target.value)}
+                 required
+              />
+         </div>
+         <div className={styles.formGroup}>
 
-        <label htmlFor="precio">Precio:</label>
-        <input
-          id="precio"
-          type="number"
-          value={precio}
-          onChange={(e) => SetPrecio(e.target.value)}
-          required
-        />
-        <label htmlFor="metodo">Metodos de pago:</label>
-        <input
-          id="metodo"
-          type="string"
-          value={metodo}
-          onChange={(e) => SetMetodo(e.target.value)}
-          required
-        />
+         <label className={styles.titulos} >Imagen (URL)</label>
+         <input className={styles.file}
+           id="image"
+           type="file"
+           accept="image/*"
+           onChange={(e) => handleImageUpload(e)}
+         />
+         </div>
+         <div className={styles.formGroup}>
 
-        <label htmlFor="category">Categoría:</label>
-        <select
-          id="category"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-        >
-          <option value="recommended">Recomendados</option>
-          <option value="soldout">Más vendidos</option>
-          <option value="offers">Ofertas</option>
-          <option value="searches">Según tus búsquedas</option>
-        </select>
+         <label className={styles.titulos} >Precio:</label>
+         <input className={styles.texto}
+           id="precio"
+           type="number"
+           value={precio}
+           onChange={(e) => SetPrecio(e.target.value)}
+           required
+         />
+         </div>
 
-        <label htmlFor="stock">
-          ¿Hay stock?
-          <input
-            id="stock"
-            type="checkbox"
-            checked={stock}
-            onChange={(e) => setStock(e.target.checked)}
-          />
-        </label>
+         <div className={styles.formGroup}>
 
-          <button type="submit" disabled={CreateProductMutation.isPending}>
+         <label className={styles.titulos} >Metodos de pago:</label>
+         <input className={styles.texto}
+           id="metodo"
+           type="string"
+           value={metodo}
+           onChange={(e) => SetMetodo(e.target.value)}
+           required
+         />
+         </div>
+        
+
+         <div className={styles.formGroup}>
+
+         <label className={styles.titulos} >Categoría:</label>
+          <select className={styles.texto}
+            id="category"
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+           >
+           <option value="recommended">Recomendados</option>
+           <option value="soldout">Más vendidos</option>
+           <option value="offers">Ofertas</option>
+           <option value="searches">Según tus búsquedas</option>
+         </select>
+         </div>
+
+         <div className={styles.formGroup}> 
+         <label className={styles.titulos}>  
+            ¿Hay stock?
+            <input
+              id="stock"
+              type="checkbox"
+              checked={stock}
+              onChange={(e) => setStock(e.target.checked)}
+            />
+          </label>
+         </div>
+
+          <button className={styles.submit} type="submit" disabled={CreateProductMutation.isPending}>
             {CreateProductMutation.isPending ? 'Creando...' : 'Crear'}
           </button>
       </form>
-      <Link to={"/"}>Ir a Inicio</Link>
-    </div>
+          <Link  to={"/"}>
+           <button className={styles.inicio}>Ir a inicio</button>
+          </Link>
+      
+    </article>
+        </>
   );
 }

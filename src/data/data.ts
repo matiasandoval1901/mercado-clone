@@ -85,7 +85,7 @@ export const productsDB = [
     },
     {
       id: 10,
-      src: 'https://images-na.ssl-images-amazon.com/images/I/71Oggg6st6L._AC_SL1200_.jpg',
+      src: 'https://http2.mlstatic.com/D_NQ_NP_921938-MLA79916802068_102024-O.webp',
       titulo: 'Guantes para moto de Invierno',
       precio: 65.999,
       metodo: 'Cuota Simple en 6 cuotas de $12.546',
@@ -166,7 +166,7 @@ export const productsDB = [
     },
     {
       id: 19,
-      src: 'https://th.bing.com/th/id/OIP.VYR1uiHS_IX7ifPmLGNwWgHaJg?rs=1&pid=ImgDetMain',
+      src: 'https://http2.mlstatic.com/D_NQ_NP_749592-MLA86615456407_062025-O.webp',
       titulo: 'Mouse Gamer',
       precio: 65.999,
       metodo: 'Cuota Simple en 6 cuotas de $12.546',

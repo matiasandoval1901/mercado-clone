@@ -3,6 +3,8 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { productService } from "../data/service";
 import type { Product } from "../Types/typeProduct";
 import styles from "./ProductDetail.module.css"
+import miImagen from "../assets/detail.jpeg"
+import miImagen2 from "../assets/detail2.jpeg"
 
 function ProductDetail() {
   const { id } = useParams<{ id: string }>();
@@ -37,17 +39,26 @@ function ProductDetail() {
   return (
     <article className={styles.Container}>
       <img className={styles.photo} src={product.src} alt={product.titulo} />
-      <h1>{product.titulo}</h1>
-      <h3>${product.precio}</h3>
-      <h3>{product.stock ? "Disponible" : "Agotado"}</h3>
-      <h3>{product.category}</h3>
+      <div className={styles.Container2}>
+       <p className={styles.name}>{product.titulo}</p>
+       <h3 className={styles.data1}>${product.precio}</h3>
+       <h3 className={styles.metodosPay}>{product.metodo}</h3>
+       <img className={styles.detail} src={miImagen}></img>
+       <h3 className={styles.stock}>Stock {product.stock ? "Disponible" : "Agotado"}</h3>
+       <Link to="/cart">
+         <button className={styles.cart} onClick={onAddProduct}>Agregar al carrito</button>
+       </Link>
+       <button className={styles.botones} onClick={() => deleteMutation.mutate()}>Eliminar</button>
+       <Link to="/">
+         <button className={styles.back}> Volver a inicio</button>
+        </Link>
+        
+      </div>
+      <div className={styles.Container3}>
+        <img className={styles.commerce} src={miImagen2}></img>
+      </div>
 
-      <Link to="/cart">
-        <button onClick={onAddProduct}>Agregar al carrito</button>
-      </Link>
 
-      <button onClick={() => deleteMutation.mutate()}>Eliminar</button>
-      <Link to="/">Volver al inicio</Link>
     </article>
   );
 }
