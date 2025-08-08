@@ -1,0 +1,29 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 20px;
+  margin-top: 50px;
+  
+}
+
+.photo {
+    width: 500px;
+    height: 450px;
+    margin-left: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.name {
+    text-align: right;
+    font-size: 12px;
+
+}
+
+.data1 {
+    text-align: right;
+    font-size: 20px;
+}

@@ -3,45 +3,52 @@ import ProductCard from '../components/ProductCard';
 import ProductCardContainer from '../components/ProductCardContainer';
 import CoverImage from '../components/CoverImage'
 
-import { response } from '../data/data';
-
+import { categories } from '../data/data';
+import { useQuery } from '@tanstack/react-query';
+import { productService } from '../data/service';
+import type { Product } from '../Types/typeProduct';
 
 function App() {
- 
+  const {data: productsDB, isLoading, error} = useQuery<Product[]> ({ 
+    queryKey : ['productsDB'], 
+    queryFn: () => productService.getAllProducts(),
+  });
 
-  const categories = [
-    {title: response.productrecommended.categorytitle,product: response.productrecommended.product},
-    {title: response.mostsoldout.categorytitle,product: response.mostsoldout.product},
-    {title: response.offers.categorytitle,product: response.offers.product},
-    {title: response.searches.categorytitle,product: response.searches.product},
-  ];//object destructuring
+  if (isLoading) return <p>Cargando productos...</p>;
+  if (error) {
+    console.error("error:", error);
+    return <p>Error al cargar productos</p>;
+  }
 
   return(
     <div>
       <CoverImage/> 
-      {categories.map((category) => (
-        <ProductCardContainer key= {category.title} title= {category.title}>
-          {category.product.map((product) => {
-            return (
+      {categories.map((category) => {
+        const filteredProducts = productsDB?.filter (
+          (product) => product.category === category.id
+        );
+
+        return (
+
+         <ProductCardContainer key= {category.id} title= {category.name}>
+           { filteredProducts && filteredProducts.map((product) => (
               <ProductCard
-
-              id= {product.id}
-              title= {product.titulo}
-              price= {product.precio}
-              methods={product.metodo}
-              src={product.src} 
+               key= {product.id}
+ 
+               id= {product.id}
+               title= {product.titulo}
+               price= {product.precio}
+               methods={product.metodo}
+               src={product.src} 
               >
-
               </ProductCard>
-            ) //a cada productCard se le pasa las props y estados/funciones globales
-          })}
-        </ProductCardContainer>
-
-      ))}
+            ))}
+         </ProductCardContainer>
+        );
         
-
+      })}
     </div>
-  )
+  );
   
 }
 

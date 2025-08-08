@@ -5,7 +5,7 @@ import styles from './ProductCard.module.css';
 type ProductCardProps = {
   id: number;
   title: string;
-  price: string;
+  price: number;
   methods: string;
   src: string;
 }

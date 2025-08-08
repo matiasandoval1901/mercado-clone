@@ -8,7 +8,7 @@ const Cart = () => {
   const handleRemove = (id: number) => {
     const updated = allproducts.filter(item => item.id !== id);
     const removed = allproducts.find(item => item.id === id);
-    const newTotal = removed ? total - parseFloat(removed.precio.replace('.', '')) : total;
+    const newTotal = removed ? total - removed.precio: total;
 
     setAllproducts(updated);
     setTotal(newTotal);
@@ -18,7 +18,6 @@ const Cart = () => {
   return (
     <>
     <div style={{ padding: '2rem' }}>
-      <h1>Carrito</h1>
       <p>Total de productos: {countproduct}</p>
 
       {allproducts.length === 0 ? (

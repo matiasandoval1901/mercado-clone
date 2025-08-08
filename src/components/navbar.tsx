@@ -38,7 +38,7 @@ const Navbar: React.FC = () => {
         <div className={styles.userSection}>
           <img className={styles.publicity} src='https://http2.mlstatic.com/D_NQ_779354-MLA82788204133_022025-OO.webp'/>
           <p>
-            <a className={styles.loginsection} href="#">Creá tu cuenta</a>
+            <Link to={"/Create"} className={styles.loginsection}>Haz una venta</Link>
             <a className={styles.loginsection} href="#">Ingresa</a>
            <button onClick={() => setActive(!active)}> 
              <span className={styles.countproduct} id="contador_productos">{countproduct}</span>
