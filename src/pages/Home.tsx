@@ -59,6 +59,7 @@ function Home() {
         setCategoriaSeleccionada={setCategoriaSeleccionada}
       />
       <CoverImage />
+      // filtrado por categorias y busqueda del usuario
       {busqueda !== "" || categoriaSeleccionada !== "" ? (
         productosFiltrados.length === 0 ? (
           <p>No se encontraron productos</p>
