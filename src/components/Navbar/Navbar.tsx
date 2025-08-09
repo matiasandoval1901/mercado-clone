@@ -1,32 +1,30 @@
 import styles from "./Navbar.module.css";
 import  React  from "react";
+import { useContext } from "react";
+import { dataContext } from "../../contex/DataContex";
+
 //props recibidas del componente padre
 type NavbarProps = {
-  allproducts: any[];
-  setAllproducts: (arr: any[]) => void;
-  total: number;
-  setTotal: (value: number) => void;
-  countproduct: number;
-  setCountproduct: (count: number) => void;
   busqueda: string;
-  setBusqueda: (value: string) => void;
+  setBusqueda: React.Dispatch<React.SetStateAction<string>>;
   categoriaSeleccionada: string;
-  setCategoriaSeleccionada: (value: string) => void;
-
+  setCategoriaSeleccionada: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const Navbar: React.FC<NavbarProps> = ({
-  allproducts,
-  setAllproducts,
-  total,
-  setTotal,
-  countproduct,
-  setCountproduct,
+const Navbar = ({
   busqueda,
   setBusqueda,
   categoriaSeleccionada,
   setCategoriaSeleccionada,
-}) => {
+}: NavbarProps ) => {
+  const {
+    allproducts,
+    setAllproducts,
+    total,
+    setTotal,
+    countproduct,
+    setCountproduct,
+  } = useContext(dataContext);
   const [active, setActive] = React.useState(false); //active permite que se muestre el resultado en el contador
 
   return (

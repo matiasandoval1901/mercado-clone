@@ -1,6 +1,5 @@
 import styles from './ProductCard.module.css';
 
-
 type ProductCardProps = {
   title: string;
   price: string;
