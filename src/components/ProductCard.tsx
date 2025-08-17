@@ -14,16 +14,14 @@ function ProductCard ( {id, title, price, methods, src}: ProductCardProps) {
 
   return (
     <article className= {styles.container}>
-      <img className={styles.image} src={src}></img>
-      <div className={styles.content}>
-        <h2 className= {styles.title}>{title}</h2>
-        <p className={styles.price}>${price}</p>
-        <p className={styles.methods}>{methods} </p>
-       
-        <Link to={`/products/${id}`}>
-          <button className={styles.button}>Ver Producto</button>
-        </Link>
-      </div>
+      <Link to={`/products/${id}`}>
+       <img className={styles.image} src={src}></img>
+       <div className={styles.content}>
+         <h2 className= {styles.title}>{title}</h2>
+         <p className={styles.price}>${price}</p>
+         <p className={styles.methods}>{methods} </p>
+       </div>
+      </Link>
     </article>
   );
 };

@@ -1,47 +1,66 @@
-import { useContext } from 'react';
-import { dataContext } from '../Context/dataContext';
-import { Link } from 'react-router';
+import { useCart } from '../Context/cartContext';
+import styles from './Cart.module.css';
+import { Link } from 'react-router-dom'; // ← CORREGIDO: era 'react-router', debe ser 'react-router-dom'
 
-const Cart = () => {
-  const { allproducts, total, countproduct, setAllproducts, setTotal, setCountproduct } = useContext(dataContext);
-
-  const handleRemove = (id: number) => {
-    const updated = allproducts.filter(item => item.id !== id);
-    const removed = allproducts.find(item => item.id === id);
-    const newTotal = removed ? total - removed.precio: total;
-
-    setAllproducts(updated);
-    setTotal(newTotal);
-    setCountproduct(countproduct - 1);
-  };
+function Cart() {
+  const { cart, removeFromCart } = useCart();
+  const total = cart.reduce((sum, item) => sum + item.precio * item.quantity, 0);
 
   return (
     <>
-    <div style={{ padding: '2rem' }}>
-      <p>Total de productos: {countproduct}</p>
+      <div className={styles.containerCart}>
 
-      {allproducts.length === 0 ? (
-        <p>Tu carrito está vacío.</p>
-      ) : (
-        <ul>
-          {allproducts.map((item) => (
-            <li key={item.id}>
-              {item.titulo} - ${item.precio}
-              <button onClick={() => handleRemove(item.id)}>Quitar</button>
-            </li>
-          ))}
-        </ul>
-      )}
+        {cart.length === 0 ? (
+          <p className={styles.emptyMessage}>El carrito está vacío.</p>
+        ) : (
+          <ul className={styles.cartList}>
+            {cart.map((item) => (
+              <li key={item.id} className={styles.cartItem}>
+                <img
+                  src={item.src}
+                  alt={item.titulo}
+                  className={styles.productImage}
+                />
+                <div className={styles.productDetails}>
+                  <h3 className={styles.productName}>{item.titulo}</h3>
+                  <div className={styles.row}>
+                    <span className={styles.quantity}>Cantidad: {item.quantity}</span>
+                    <span className={styles.price}>${item.precio}</span>
+                    <button
+                      className={styles.removeButton}
+                      onClick={() => removeFromCart(item.id)}
+                    >
+                      Eliminar
+                    </button>
+                    <Link
+                      to="/buy"
+                      state={{
+                        product: item,
+                      }}
+                    >
+                      <button className={styles.buybutton}>Comprar</button>
+                    </Link>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
+         {cart.length > 0 && (
+          <div className={styles.totalContainer}>
+            <span className={styles.totalLabel}>Total:</span>
+            <span className={styles.totalAmount}>${total.toFixed(2)}</span>
+          </div>
+        )}
+      </div>
 
-      <h2>Total: ${total.toLocaleString()}</h2>
-    </div>
-    <Link to="/buy"> Comprar
-    </Link>
-    <Link to= "/">
-        Volver
-    </Link>
+      <div className={styles.actions}>
+        <Link className={styles.backButton} to="/">
+          Volver
+        </Link>
+      </div>
     </>
   );
-};
+}
 
 export default Cart;

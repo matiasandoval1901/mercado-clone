@@ -11,6 +11,7 @@ import DataProvider from './Context/dataContext';
 import Checkout from './Pages/Checkout'
 import Create from './Pages/Create'
 import { QueryClient, QueryClientProvider} from '@tanstack/react-query';
+import { CartProvider } from './Context/cartContext';
 
 const queryClient = new QueryClient (); 
 
@@ -19,24 +20,22 @@ createRoot(document.getElementById('root')!).render(
 
    <StrictMode>
     <QueryClientProvider client= {queryClient}>
-      <BrowserRouter>
-       <Routes>
-         <Route element={<Layout />}>
-           <Route path='/' element={<App />} />
-           <Route path='/cart' element={<Cart />} />
-           <Route path='/products/:id' element={<ProductDetail />} />
-           <Route path='/buy' element={<Checkout/>}/>
-           <Route path='/create' element={<Create/>}/>
-           <Route path='*' element={<NotFound />} />
-         </Route>
-       </Routes>
-     </BrowserRouter>
+      <CartProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route element={<Layout />}>
+              <Route path='/' element={<App />} />
+              <Route path='/cart' element={<Cart />} />
+              <Route path='/products/:id' element={<ProductDetail />} />
+              <Route path='/buy' element={<Checkout/>}/>
+              <Route path='/create' element={<Create/>}/>
+              <Route path='*' element={<NotFound />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+       </CartProvider>
     </QueryClientProvider>
    </StrictMode>
   </DataProvider>
 );
 
-// mati hace la interfaz de detalle del producto donde estara el boton de agregar al carrito o comprar
-//que te lleva a la interfaz del carrito donde podes sumar o restar el mismo producto y aparece un total
-//codigo que tengo en productcard button 
-//yo debo hacer la interfaz de simulacion de compra .

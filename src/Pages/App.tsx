@@ -7,6 +7,7 @@ import { categories } from '../data/data';
 import { useQuery } from '@tanstack/react-query';
 import { productService } from '../data/service';
 import type { Product } from '../Types/typeProduct';
+import styles from '../components/ProductCardContainer.module.css'
 
 function App() {
   const {data: productsDB, isLoading, error} = useQuery<Product[]> ({ 
@@ -32,6 +33,7 @@ function App() {
 
          <ProductCardContainer key= {category.id} title= {category.name}>
            { filteredProducts && filteredProducts.map((product) => (
+            <div className={styles.productcard} key={product.id}>
               <ProductCard
                key= {product.id}
  
@@ -42,6 +44,7 @@ function App() {
                src={product.src} 
               >
               </ProductCard>
+            </div>
             ))}
          </ProductCardContainer>
         );

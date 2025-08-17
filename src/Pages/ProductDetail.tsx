@@ -5,12 +5,14 @@ import type { Product } from "../Types/typeProduct";
 import styles from "./ProductDetail.module.css"
 import miImagen from "../assets/detail.jpeg"
 import miImagen2 from "../assets/detail2.jpeg"
+import { useCart } from "../Context/cartContext";
 
 function ProductDetail() {
   const { id } = useParams<{ id: string }>();
   const productId = Number(id);
   const queryClient = useQueryClient();
   const navigate = useNavigate();
+  const { addToCart } = useCart();
 
   const { data: product, isLoading, error } = useQuery<Product>({
     queryKey: ["product", id],
@@ -32,9 +34,13 @@ function ProductDetail() {
   if (isLoading) return <p>Cargando producto...</p>;
   if (error || !product) return <p>Producto no encontrado</p>;
 
+  
+
   const onAddProduct = () => {
-    // lógica para agregar al carritods
+    addToCart(product); // ✅ agrega el producto al carrito
+    // opcional: mostrar una alerta, toast o feedback
   };
+
 
   return (
     <article className={styles.Container}>

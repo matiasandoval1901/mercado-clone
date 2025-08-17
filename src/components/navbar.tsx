@@ -7,11 +7,9 @@ import { dataContext } from "../Context/dataContext";
 const Navbar: React.FC = () => {
   const {
     countproduct
-    // Puedes agregar más si los necesitas: total, setAllproducts, etc.
   } = useContext(dataContext);
 
-  const [active, setActive] = React.useState(false); //active permite que se muestre el resultado en el contador
-
+  const [active, setActive] = React.useState(false); 
   return (
     <nav className={styles.navbar}>
       
@@ -53,8 +51,6 @@ const Navbar: React.FC = () => {
 
       <div className={styles.bottomRow}>
         <select 
-          //value={categoriaSeleccionada}
-          //onChange={(e) => setCategoriaSeleccionada(e.target.value)}
           >
             <option value="">Categorías</option>
             <option value="PRODUCTOS RECOMENDADOS">Productos Recomendados</option>

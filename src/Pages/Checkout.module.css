@@ -10,6 +10,13 @@
 
 }
 
+.productImage {
+  margin-top: 10px;
+  width: 60px;
+  height: 60px;
+  margin-left: 10px;
+}
+
 .buy {
        background-color:rgb(88, 137, 230);
     height: 50px;
@@ -27,8 +34,8 @@
   background-color: rgb(255, 255, 255);
   margin-left: 400px;
   margin-top: 40px;
-  height: 550px;
-  width: 450px;
+  height: 600px;
+  width: 600px;
   border-radius: 10px;
  
   
@@ -86,3 +93,23 @@
   
 }
 
+.shipping, .subtotal, .pay, .total {
+  margin: 0.5rem 0;
+  font-size: 16px;
+  margin-left: 350px;
+}
+
+.productName {
+  margin-left: 60px;
+
+}
+
+.productList {
+  list-style: none;
+  padding: 0;
+}
+
+.productItem {
+  margin-bottom: 4px;
+  font-size: 16px;
+}

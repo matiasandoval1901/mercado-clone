@@ -19,8 +19,55 @@
 
 .productContainer {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
   gap: 8px;
   background-color: rgb(255, 255, 255);
   
+}
+
+/* Este contenedor es el que permite scroll horizontal */
+.productcarousel {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden; 
+  max-width: 100%; 
+  gap: 16px;   /* Esto evita scroll vertical inesperado */
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  background-color: rgb(255, 255, 255);
+}
+
+
+.productcarousel::-webkit-scrollbar {
+  display: none; /* Oculta la barra de scroll */
+}
+
+.productcard {
+  min-width: 200px;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  
+}
+
+.carouselWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.scrollButton {
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 0 8px;
+  z-index: 1;
+  transition: background-color 0.5s ease;
+}
+
+.scrollButton:hover {
+  background-color: transparent;
 }

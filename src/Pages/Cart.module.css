@@ -1,17 +1,156 @@
 .containerCart {
-  width: 800px;
-  height: 250px;
-  flex-direction: column;
-  background-color: rgb(255, 255, 255);
-  margin-left: 20px;
-  margin-right: 20px;
-  border-radius: 20px;
-  margin-top: 50px;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
 }
 
-.priceCart {
-  color: black;
+.cartTitle {
+  font-size: 24px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.emptyMessage {
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+}
+
+.cartList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cartItem {
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.productImage {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 1rem;
+}
+
+.productDetails {
+  flex: 1;
+}
+
+.productName {
+  font-size: 18px;
+  margin: 0 0 0.5rem 0;
+  color: #333;
+  margin-right: 60px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.quantity,
+.price {
   font-size: 14px;
-  width: 170px;
-  padding-bottom: 4px;
+  color: #555;
+}
+
+.removeButton {
+  padding: 6px 12px;
+  color:#555;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.removeButton:hover {
+  background-color: #c0392b;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.buyButton,
+.backButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buyButton {
+ color: #3483fa;
+    height: 30px;
+    width: 150px;
+    border-radius: 10px;
+    background-color: rgba(65, 137, 230, .15);
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.buyButton:hover {
+  background-color: #219150;
+}
+
+.backButton {
+   color: #3483fa;
+  background-color: transparent;
+    border: 1px solid;
+    border-color: rgb(164, 178, 255);
+    width: 150px;
+    height: 30px;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.backButton:hover {
+  background-color: #2980b9;
+}
+
+.totalContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 1.5rem;
+  margin-right: 1rem;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.totalLabel {
+  margin-right: 10px;
+}
+
+.totalAmount {
+  color: #27ae60;
+  font-size: 20px;
+}
+
+.buybutton {
+  padding: 6px 12px;
+  color:#555;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 14px;
 }
