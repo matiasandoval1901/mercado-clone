@@ -17,7 +17,7 @@
 .form {
   background-color: #ffe600;
   width: 120px;
-  height: 40px;
+  height: 30px;
 }
 .location {
   width: 100px;
@@ -37,7 +37,7 @@
   top: 20;
   left: 110px;
   z-index: 9999; 
-  position: absolute;
+  position: absolute; 
 }
 
 .h1 {
@@ -111,10 +111,22 @@
   
 .bottomRow {
   display: flex;
-  justify-content: center;
+  padding-left: 340px;
   padding-bottom: 2px;
   gap: 20px;
   height: 45px;
+}
+
+.bottomRow select {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  margin-top: 24px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 95px;
+
 }
   
 .bottomRow a {

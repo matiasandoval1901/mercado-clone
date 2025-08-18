@@ -1,32 +1,44 @@
+
+import { Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
+<<<<<<< HEAD:src/components/Navbar/Navbar.tsx
 import  React  from "react";
+import { useContext } from "react";
+import { dataContext } from "../../contex/DataContex";
+
 //props recibidas del componente padre
 type NavbarProps = {
-  allproducts: any[];
-  setAllproducts: (arr: any[]) => void;
-  total: number;
-  setTotal: (value: number) => void;
-  countproduct: number;
-  setCountproduct: (count: number) => void;
   busqueda: string;
-  setBusqueda: (value: string) => void;
+  setBusqueda: React.Dispatch<React.SetStateAction<string>>;
   categoriaSeleccionada: string;
-  setCategoriaSeleccionada: (value: string) => void;
-
+  setCategoriaSeleccionada: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const Navbar: React.FC<NavbarProps> = ({
-  allproducts,
-  setAllproducts,
-  total,
-  setTotal,
-  countproduct,
-  setCountproduct,
+const Navbar = ({
   busqueda,
   setBusqueda,
   categoriaSeleccionada,
   setCategoriaSeleccionada,
-}) => {
+}: NavbarProps ) => {
+  const {
+    allproducts,
+    setAllproducts,
+    total,
+    setTotal,
+    countproduct,
+    setCountproduct,
+  } = useContext(dataContext);
+=======
+import React, { useContext} from "react";
+import { dataContext } from "../Context/dataContext";
+
+const Navbar: React.FC = () => {
+  const {
+    countproduct
+    // Puedes agregar más si los necesitas: total, setAllproducts, etc.
+  } = useContext(dataContext);
+
+>>>>>>> d5489381cae879ef3198dde6a47219d5ed1b6420:src/components/navbar.tsx
   const [active, setActive] = React.useState(false); //active permite que se muestre el resultado en el contador
 
   return (
@@ -47,8 +59,8 @@ const Navbar: React.FC<NavbarProps> = ({
         <div className={styles.searchContainer}>
           <input type="text"
           placeholder="Buscar productos, marcas y más..."
-          value={busqueda}
-          onChange={(e) => setBusqueda(e.target.value)}
+          //value={busqueda}
+          //onChange={(e) => setBusqueda(e.target.value)}
           />
           <button>Buscar</button>
         </div>
@@ -59,7 +71,9 @@ const Navbar: React.FC<NavbarProps> = ({
             <a className={styles.loginsection} href="#">Ingresa</a>
            <button onClick={() => setActive(!active)}> 
              <span className={styles.countproduct} id="contador_productos">{countproduct}</span>
-             <img  className={styles.cart} src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png"/>
+             <Link to={"/cart"}>
+               <img  className={styles.cart} src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png"/>
+             </Link>
             </button>
           </p>
         </div>
@@ -67,16 +81,16 @@ const Navbar: React.FC<NavbarProps> = ({
       </div>
 
       <div className={styles.bottomRow}>
-      <select 
-          value={categoriaSeleccionada}
-          onChange={(e) => setCategoriaSeleccionada(e.target.value)}
+        <select 
+          //value={categoriaSeleccionada}
+          //onChange={(e) => setCategoriaSeleccionada(e.target.value)}
           >
             <option value="">Categorías</option>
             <option value="PRODUCTOS RECOMENDADOS">Productos Recomendados</option>
             <option value="LOS MAS VENDIDOS">Los Mas Vendidos</option>
             <option value="OFERTAS 50% OFF">Ofertas 50% Off</option>
             <option value="SEGUN TUS BUSQUEDAS">Según Tus Búsquedas</option>
-          </select>
+        </select>
         <a href="#">Ofertas</a>
         <a href="#">Cupones</a>
         <a href="#">Supermercado</a>
