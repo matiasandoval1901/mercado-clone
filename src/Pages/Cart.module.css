@@ -1,0 +1,17 @@
+.containerCart {
+  width: 800px;
+  height: 250px;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 20px;
+  margin-top: 50px;
+}
+
+.priceCart {
+  color: black;
+  font-size: 14px;
+  width: 170px;
+  padding-bottom: 4px;
+}
